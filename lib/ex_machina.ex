@@ -172,7 +172,7 @@ defmodule ExMachina do
         apply(module, function_name, []) |> do_merge(attrs)
 
       Code.ensure_loaded?(module) && function_exported?(module, function_name, 1) ->
-        apply(module, function_name, [attrs]) |> do_merge(attrs)
+        apply(module, function_name, [attrs])
 
       true ->
         raise UndefinedFactoryError, factory_name
